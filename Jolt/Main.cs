@@ -7,7 +7,6 @@ namespace Jolt
     public partial class Main : Form
     {
         private readonly NotifyIcon sysTrayIcon;
-        // TODO ContextMenu is no longer supported. Use ContextMenuStrip instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
         private readonly ContextMenuStrip sysTrayMenu;
         private readonly Timer interval = new();
         private int seconds = 300;
@@ -16,14 +15,12 @@ namespace Jolt
         {
             InitializeComponent();
 
-            // TODO ContextMenu is no longer supported. Use ContextMenuStrip instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
             sysTrayMenu = new ContextMenuStrip();
             sysTrayMenu.Items.Add("Enable Jolt", null, OnEnabled);
             sysTrayMenu.Items.Add("Disable Jolt", null, OnDisabled);
             sysTrayMenu.Items.Add("Edit Interval", null, OnShowed);
             sysTrayMenu.Items.Add("Exit", null, OnExit);
 
-            // TODO ContextMenu is no longer supported. Use ContextMenuStrip instead. For more details see https://docs.microsoft.com/en-us/dotnet/core/compatibility/winforms#removed-controls
             sysTrayIcon = new NotifyIcon
             {
                 Text = "Jolt",
