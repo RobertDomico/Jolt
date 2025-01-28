@@ -28,67 +28,95 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.btnHide = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            notifyIcon1 = new System.Windows.Forms.NotifyIcon(components);
+            btnHide = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            maskedTextBoxInterval = new System.Windows.Forms.MaskedTextBox();
+            maskedTextBoxOff = new System.Windows.Forms.MaskedTextBox();
+            label2 = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.Text = "notifyIcon1";
-            this.notifyIcon1.Visible = true;
+            notifyIcon1.Text = "notifyIcon1";
+            notifyIcon1.Visible = true;
             // 
             // btnHide
             // 
-            this.btnHide.Location = new System.Drawing.Point(109, 67);
-            this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(75, 23);
-            this.btnHide.TabIndex = 0;
-            this.btnHide.Text = "Hide";
-            this.btnHide.UseVisualStyleBackColor = true;
-            this.btnHide.Click += new System.EventHandler(this.BtnHide_Click);
+            btnHide.Location = new System.Drawing.Point(191, 226);
+            btnHide.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            btnHide.Name = "btnHide";
+            btnHide.Size = new System.Drawing.Size(125, 44);
+            btnHide.TabIndex = 0;
+            btnHide.Text = "Hide";
+            btnHide.UseVisualStyleBackColor = true;
+            btnHide.Click += BtnHide_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Interval in Seconds";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(33, 29);
+            label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(161, 25);
+            label1.TabIndex = 2;
+            label1.Text = "Interval in Seconds";
             // 
-            // maskedTextBox
+            // maskedTextBoxInterval
             // 
-            this.maskedTextBox.Location = new System.Drawing.Point(23, 31);
-            this.maskedTextBox.Mask = "00000";
-            this.maskedTextBox.Name = "maskedTextBox";
-            this.maskedTextBox.Size = new System.Drawing.Size(41, 20);
-            this.maskedTextBox.TabIndex = 3;
-            this.maskedTextBox.ValidatingType = typeof(int);
+            maskedTextBoxInterval.Location = new System.Drawing.Point(38, 60);
+            maskedTextBoxInterval.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            maskedTextBoxInterval.Mask = "00000";
+            maskedTextBoxInterval.Name = "maskedTextBoxInterval";
+            maskedTextBoxInterval.Size = new System.Drawing.Size(66, 31);
+            maskedTextBoxInterval.TabIndex = 3;
+            maskedTextBoxInterval.ValidatingType = typeof(int);
+            // 
+            // maskedTextBoxOff
+            // 
+            maskedTextBoxOff.Location = new System.Drawing.Point(38, 155);
+            maskedTextBoxOff.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            maskedTextBoxOff.Mask = "00000";
+            maskedTextBoxOff.Name = "maskedTextBoxOff";
+            maskedTextBoxOff.Size = new System.Drawing.Size(66, 31);
+            maskedTextBoxOff.TabIndex = 5;
+            maskedTextBoxOff.ValidatingType = typeof(int);
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(33, 124);
+            label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(162, 25);
+            label2.TabIndex = 4;
+            label2.Text = "Turn off in Minutes";
             // 
             // Main
             // 
-            this.AcceptButton = this.btnHide;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(195, 101);
-            this.ControlBox = false;
-            this.Controls.Add(this.maskedTextBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnHide);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.MaximumSize = new System.Drawing.Size(211, 140);
-            this.MinimumSize = new System.Drawing.Size(211, 140);
-            this.Name = "Main";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "Jolt";
-            this.TopMost = true;
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AcceptButton = btnHide;
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            AutoSize = true;
+            ClientSize = new System.Drawing.Size(315, 281);
+            ControlBox = false;
+            Controls.Add(maskedTextBoxOff);
+            Controls.Add(label2);
+            Controls.Add(maskedTextBoxInterval);
+            Controls.Add(label1);
+            Controls.Add(btnHide);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            MaximumSize = new System.Drawing.Size(337, 337);
+            MinimumSize = new System.Drawing.Size(337, 337);
+            Name = "Main";
+            StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            Text = "Jolt";
+            TopMost = true;
+            Load += Main_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -96,7 +124,9 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button btnHide;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxInterval;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxOff;
+        private System.Windows.Forms.Label label2;
     }
 }
 
